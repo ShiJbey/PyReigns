@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pyreignslib"
+version = "1.0.0"
+authors = [
+  { name="Shi Johnson-Bey", email="shijbey@gmail.com" },
+]
+description = "Library for creating clones of the Tinder-style swiping story game, Reigns"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "pygame",
+    "pygame_gui"
+]
+
+[project.optional-dependencies]
+dev = [
+    "isort",
+    "black",
+    "black[d]"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.black]
+line-length = 88
+
+[tool.isort]
+profile = "black"
+default_section = "THIRDPARTY"
+known_first_party = "pyreignslib"
+src_paths = ["src/pyreignslib", "pyreigns.py"]
